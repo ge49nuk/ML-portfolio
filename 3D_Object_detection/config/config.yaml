@@ -1,0 +1,18 @@
+# Managed by Hydra
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
+defaults:
+  - _self_
+  - data: base
+  - model: base
+
+experiment_name: run_1
+project_root_path: ${hydra:runtime.cwd}
+exp_output_root_path: ${project_root_path}/output/${data.dataset}/${model.network.module}/${experiment_name}
+
+global_train_seed: 123
+global_test_seed: 321

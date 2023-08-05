@@ -1,0 +1,34 @@
+# Managed by Hydra
+
+defaults:
+  - base
+
+dataset: MultiScanObj
+dataset_path: ${data.dataset_root_path}/multiscan_obj
+
+metadata:
+  metadata_path: ${data.dataset_path}/metadata
+  train_list: ${data.metadata.metadata_path}/multiscan_obj_train.txt
+  val_list: ${data.metadata.metadata_path}/multiscan_obj_val.txt
+  test_list: ${data.metadata.metadata_path}/multiscan_obj_test.txt
+
+classes: 20
+ignore_classes: [1, 2, 3]
+class_names: ['floor', 'ceiling', 'wall', 'door', 'table', 'chair', 'cabinet', 'window', 'sofa', 'microwave', 'pillow',
+              'tv_monitor', 'curtain', 'trash_can', 'suitcase', 'sink', 'backpack', 'bed', 'refrigerator', 'toilet']
+
+mapping_classes_ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+point_num_avg: [-1, -1, -1, 7928, 4803, 2729, 9009, 8752, 9005, 1856, 930, 2095, 5361, 1495, 1277, 2177, 1132, 12708, 6041, 2956]
+radius_avg: [-1., -1., -1., 1.2151521115370516, 0.8157643090178083,
+              0.587149338569583, 1.0465105456578268, 1.27936397249817, 0.9632455624571634,
+              0.4274198567045146, 0.4079477721475121, 0.47226395689207934, 1.0399777334789897,
+              0.3480360368629555, 0.367634888280902, 0.49226664503415424, 0.37406315760953085,
+              1.4333213229437132, 0.894549883181049, 0.5293050301380646]
+
+augmentation:
+  jitter_xyz: True
+  flip: True
+  rotation: False
+  elastic: False
+  jitter_rgb: False

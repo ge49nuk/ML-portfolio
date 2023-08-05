@@ -1,0 +1,30 @@
+# data
+data/*/train
+data/*/val
+data/*/test
+data/*/scans
+
+# log
+log/
+logs/
+wandb
+*.log
+
+# output
+output/
+
+# temp
+temp/
+
+# pointgroup ops
+minsu3d/common_ops/COMMON_OP*
+minsu3d/common_ops/build/
+
+# other files
+.DS_Store
+__pycache__
+.vscode
+.idea
+env
+*.egg-info
+*.ckpt

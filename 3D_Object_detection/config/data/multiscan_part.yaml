@@ -1,0 +1,30 @@
+# Managed by Hydra
+
+defaults:
+  - base
+
+dataset: MultiScanPart
+dataset_path: ${data.dataset_root_path}/multiscan_part
+
+metadata:
+  metadata_path: ${data.dataset_path}/metadata
+  train_list: ${data.metadata.metadata_path}/multiscan_part_train.txt
+  val_list: ${data.metadata.metadata_path}/multiscan_part_val.txt
+  test_list: ${data.metadata.metadata_path}/multiscan_part_test.txt
+
+classes: 5
+batch_size: 64
+ignore_classes: []
+class_names: ['static_part', 'door', 'drawer', 'window', 'lid']
+
+mapping_classes_ids: [1, 2, 3, 4, 5]
+
+point_num_avg: [4550, 1886, 533, 2507, 632]
+radius_avg: [1.0186367394911635, 0.5453255962637172, 0.26759901489354926, 0.7133421062968159, 0.2788914850642604]
+
+augmentation:
+  jitter_xyz: True
+  flip: True
+  rotation: False
+  elastic: False
+  jitter_rgb: False

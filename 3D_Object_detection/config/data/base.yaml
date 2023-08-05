@@ -1,0 +1,16 @@
+# Managed by Hydra
+
+dataset_root_path: ${project_root_path}/data
+
+voxel_size: 0.02
+batch_size: 1
+num_workers: 1
+full_scale: [128, 512]
+max_num_point: 1000000
+
+augmentation:
+  jitter_xyz: True
+  flip: False
+  rotation: True
+  elastic: False
+  jitter_rgb: True
