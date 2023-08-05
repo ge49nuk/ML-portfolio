@@ -151,8 +151,9 @@ cd visualize/scannet
 |:-----------------------------------:|:-----------------------------------:|
 | <img src="./visualize/example/Visual_Grounding.png" width="400"/> | <img src="./visualize/example/Dense_Captioning.png" width="400"/> |
 | Query: "This is a black tv. It is mounted on a white wall" | Prediction: 	"Placed there is a square chair . it is at the long table with the brown chair is at the" |
+|:-----------------------------------:|Ground Truth: "There is a gray chair. It is at a table with its back facing a white wall” |
 
-Ground Truth: "There is a gray chair. It is at a table with its back facing a white wall” |
+
 
 
 ## Acknowledgement
