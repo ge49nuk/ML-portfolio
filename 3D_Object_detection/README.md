@@ -147,9 +147,9 @@ cd visualize/scannet
 ./run.sh 
 ```
 
-| Prediction for: "This is a black tv. It is mounted on a white wall" |
-|:-----------------------------------:|
-| <img src="./visualize/example/Visual_Grounding.png" width="400"/> |
+| (VG) Prediction for: "This is a black tv. It is mounted on a white wall" | (DC) Prediction: “Placed there is a square chair . it is at the long table with the brown chair is at the”
+|:-----------------------------------:|:-----------------------------------:|
+| <img src="./visualize/example/Visual_Grounding.png" width="400"/> | <img src="./visualize/example/DenseCaptioning.png" width="400"/> |
 
 
 ## Acknowledgement
