@@ -141,7 +141,6 @@ python test_light.py model=joint_light data=joint model.ckpt_path={checkpoint_pa
 cd visualize/scannet
 ./run.sh 
 ```
-
 | Visual Grounding; Query: This is a black tv. It is mounted on a white wall |
 |:-----------------------------------:|
 | <img src="https://github.com/ge49nuk/ML-portfolio/tree/main/3D_Object_detection/visualize/example/Visual_Grounding.png" width="400"/> |
