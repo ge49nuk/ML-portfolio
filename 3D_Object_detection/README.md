@@ -147,7 +147,7 @@ cd visualize/scannet
 ./run.sh 
 ```
 
-| Visual Grounding: "This is a black tv. It is mounted on a white wall" |
+| Prediction for: "This is a black tv. It is mounted on a white wall" |
 |:-----------------------------------:|
 | <img src="./visualize/example/Visual_Grounding.png" width="400"/> |
 
