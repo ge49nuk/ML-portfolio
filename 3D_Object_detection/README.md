@@ -8,6 +8,7 @@ The tasks of VG and DC can be described as follows:
 The base for this project was the [Minsu3d](https://github.com/3dlg-hcvc/minsu3d) repository and their framework for running [SoftGroup](https://github.com/thangvubk/SoftGroup).  
 
 ## Features
+- Transformer-based predictions for 3D dense captioning and 3D visual grounding
 - Highly-modularized design enables researchers to easily add different models and datasets.
 - Better logging with [W&B](https://github.com/wandb/wandb), periodic evaluation during training.
 - Easy experiment configuration and management with [Hydra](https://github.com/facebookresearch/hydra).
