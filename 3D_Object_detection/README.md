@@ -1,5 +1,5 @@
 # Joint Architecture for VG and DC
-This repository is implementing a transformer that learns a joint representation of 3D objects and text descriptions in order to solve the tasks of visual grounding (VG) and dense captioning (DC).
+This repository is implementing a transformer that learns a joint representation of 3D objects and text descriptions in order to solve the tasks of visual grounding (VG) and dense captioning (DC). It was implemented by my team partner Zhihao Liang and myself.
 
 The base for this project was the [Minsu3d](https://github.com/3dlg-hcvc/minsu3d) repository and their framework for running [SoftGroup](https://github.com/thangvubk/SoftGroup).  
 
@@ -98,7 +98,7 @@ python data/scannetv2/preprocess_all_data.py data=scannetv2
 ```
 
 ### SoftGroup
-1. Download the pretrained SoftGroup weights [link](https://aspis.cmpt.sfu.ca/projects/minsu3d/pretrained_models/SoftGroup_best.ckpt) and put them inside the root folder.
+1. Download the pretrained [SoftGroup weights](https://aspis.cmpt.sfu.ca/projects/minsu3d/pretrained_models/SoftGroup_best.ckpt) and put them inside the root folder.
 
 2. Precompute the SoftGroup and BERT output:
 ```shell
@@ -142,14 +142,10 @@ cd visualize/scannet
 ./run.sh 
 ```
 
-| Semantic Segmentation(color)              | Instance Segmentation(color)           |
-|:-----------------------------------:|:-------------------------------:|
-| <img src="https://github.com/3dlg-hcvc/minsu3d-internal/blob/main/visualize/example/color_semantic.png" width="400"/> | <img src="https://github.com/3dlg-hcvc/minsu3d-internal/blob/main/visualize/example/color_instance.png" width="400"/> |
-
-| Semantic Segmentation(bbox)              | Instance Segmentation(bbox)           |
-|:-----------------------------------:|:-------------------------------:|
-| <img src="https://github.com/3dlg-hcvc/minsu3d-internal/blob/main/visualize/example/bbox_semantic.png" width="400"/> | <img src="https://github.com/3dlg-hcvc/minsu3d-internal/blob/main/visualize/example/bbox_instance.png" width="400"/> |
+| Visual Grounding: "This is a black tv. It is mounted on a white wall" |
+|:-----------------------------------:|
+| <img src="https://github.com/ge49nuk/ML-portfolio/tree/main/3D_Object_detection/visualize/example/Visual_Grounding.png" width="400"/> |
 
 
 ## Acknowledgement
-This repo is built upon the [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine), [PointGroup](https://github.com/dvlab-research/PointGroup), [HAIS](https://github.com/hustvl/HAIS), and [SoftGroup](https://github.com/thangvubk/SoftGroup).  We train our models on [ScanNet](https://github.com/ScanNet/ScanNet). If you use this repo and the pretrained models, please cite the original papers.
+This repo is built upon the [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine) and [SoftGroup](https://github.com/thangvubk/SoftGroup).  We train our models on [ScanNet](https://github.com/ScanNet/ScanNet). If you use this repo and the pretrained models, please cite the original papers.
