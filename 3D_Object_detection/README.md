@@ -142,11 +142,7 @@ cd visualize/scannet
 ./run.sh 
 ```
 
-| Semantic Segmentation(color)              | Instance Segmentation(color)           |
-|:-----------------------------------:|:-------------------------------:|
-| <img src="https://github.com/ge49nuk/ML-portfolio/tree/main/3D_Object_detection/visualize/example/Visual_Grounding.png" width="400"/> | <img src="https://github.com/ge49nuk/ML-portfolio/tree/main/3D_Object_detection/visualize/example/Visual_Grounding.png" width="400"/> |
-
-| Visual Grounding; Query: This is a black tv. It is mounted on a white wall |
+| Visual Grounding: "This is a black tv. It is mounted on a white wall" |
 |:-----------------------------------:|
 | <img src="https://github.com/ge49nuk/ML-portfolio/tree/main/3D_Object_detection/visualize/example/Visual_Grounding.png" width="400"/> |
 
