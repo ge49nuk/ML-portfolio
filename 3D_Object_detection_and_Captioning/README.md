@@ -1,4 +1,4 @@
-# Joint Architecture for VG and DC
+# Joint Architecture for Visual Grounding and Dense Captioning
 This repository is implementing a transformer that learns a joint representation of 3D objects and text descriptions in order to solve the tasks of **visual grounding (VG)** and **dense captioning (DC)**. It was implemented by my team partner Zhihao Liang and myself.
 
 The tasks of VG and DC can be described as follows:
