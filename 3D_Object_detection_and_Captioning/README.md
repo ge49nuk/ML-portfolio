@@ -149,7 +149,7 @@ cd visualize/scannet
 
 | (VG) Prediction for: "This is a black tv. It is mounted on a white wall" | (DC) Prediction |
 |:-----------------------------------:|:-----------------------------------:|
-| <img src="./visualize/example/Visual_Grounding.png" width="400"/> | <img src="./visualize/example/DenseCaptioning.png" width="400"/> |
+| <img src="./visualize/example/Visual_Grounding.png" width="400"/> | <img src="./visualize/example/Dense_Captioning.png" width="400"/> |
 
 
 ## Acknowledgement
