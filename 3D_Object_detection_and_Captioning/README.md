@@ -5,7 +5,7 @@ The tasks of VG and DC can be described as follows:
 - **3D Visual Grounding**: The model predicts the bounding box of an object in a 3D environment. The input consists of a point cloud and a description that matches the target object.
 - **3D Dense Captioning**: The model predicts bounding boxes and descriptions for all objects in the 3D environment. The input is a point cloud.
 
-The base for this project was the [Minsu3d](https://github.com/3dlg-hcvc/minsu3d) repository and their framework for running [SoftGroup](https://github.com/thangvubk/SoftGroup). More information about the project and the results can be found in the [Report](docs/Final_report_ADL.pdf)
+The base for this project was the [Minsu3d](https://github.com/3dlg-hcvc/minsu3d) repository and their framework for running [SoftGroup](https://github.com/thangvubk/SoftGroup). More information about the project and the results can be found in the [__Report__](docs/Final_report_ADL.pdf).
 
 ## Features
 - Transformer-based predictions for 3D dense captioning and 3D visual grounding
