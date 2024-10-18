@@ -2,7 +2,7 @@
 
 This repository is an implementation of the Object-Matching-Module, a refinement for the [SAM-6D instance segmentation model](https://github.com/JiehongLin/SAM-6D/tree/main/SAM-6D/Instance_Segmentation_Model). The refinement is based on the [Rotation-Invariant Transformer for Point Cloud Matching](https://github.com/haoyu94/RoITr) and aims to improve SAM-6D's mask-to-object matching using depth data. The full pipeline of our method can be observed below.
 
-<img src="./images/method.png" width="400"/>
+<img src="./images/method.png" width="200"/>
 
 
 Tested with:
