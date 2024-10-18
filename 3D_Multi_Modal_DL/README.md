@@ -1,5 +1,8 @@
 # 3D-refined SAM-6D
 
+This repository is an implementation of the Object-Matching-Module, a refinement for the [SAM-6D instance segmentation model](https://github.com/JiehongLin/SAM-6D/tree/main/SAM-6D/Instance_Segmentation_Model). The refinement is based on the [Rotation-Invariant Transformer for Point Cloud Matching](https://github.com/haoyu94/RoITr) and aims to improve SAM-6D's mask-to-object matching using depth data.
+
+
 Tested with:
 - Python=3.8.12
 - pytorch 2.1.1
@@ -97,8 +100,4 @@ c. Execute the inference script:
 ```shell
 python sam6d_inference.py
 ```
-
-## More info
-
-For more information on the project, please refer to https://confluence.mvtec.com/display/RS/%28MA%29+Multi+modal+Deep+Learning+models+for+combined+image+and+3D+data+analysis.
 
