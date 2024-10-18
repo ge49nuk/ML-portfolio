@@ -1,0 +1,11 @@
+__pycache__/
+
+checkpoints/
+output/
+sam6d_log/
+lightning_logs/
+roitr_snapshot/
+
+*.ply
+*.o
+*.so

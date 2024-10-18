@@ -1,0 +1,99 @@
+root_dir: ${machine.root_dir}/BOP/
+source_url: https://bop.felk.cvut.cz/media/data/bop_datasets/
+unzip_mode: unzip
+
+reference_dataloader:
+  _target_: sam6d_provider.bop.BOPTemplate
+  obj_ids:
+  template_dir: ${machine.root_dir}/BOP/
+  level_templates: 0
+  pose_distribution: all
+  processing_config:
+    image_size: ${model.descriptor_model.image_size}
+    max_num_scenes: 10 # config for reference frames selection
+    max_num_frames: 500
+    min_visib_fract: 0.8
+    num_references: 200 
+    use_visible_mask: True
+
+query_dataloader:
+  _target_: sam6d_provider.bop.BaseBOPTest
+  root_dir: ${machine.root_dir}/BOP/
+  split:
+  reset_metaData: True
+  processing_config:
+    image_size: ${model.descriptor_model.image_size}
+    
+train_datasets:
+  megapose-gso:
+    identifier: bop23_datasets/megapose-gso/gso_models.json
+    mapping_image_key: /bop23_datasets/megapose-gso/train_pbr_web/key_to_shard.json
+    prefix: bop23_datasets/megapose-gso/train_pbr_web/
+    shard_ids: [0, 1039]
+  megapose-shapenet:
+    identifier: bop23_datasets/megapose-shapenet/shapenet_models.json
+    mapping_image_key: bop23_datasets/megapose-shapenet/train_pbr_web/key_to_shard.json
+    prefix: bop23_datasets/megapose-shapenet/train_pbr_web
+    shard_ids: [0, 1039]
+
+datasets: 
+  lm:
+    cad: lm_models.zip
+    test: lm_test_bop19.zip
+    pbr_train: lm_train_pbr.zip
+    obj_names: [001_ape, 002_benchvise, 003_bowl, 004_camera, 005_can, 006_cat, 007_cup, 008_driller, 009_duck, 010_eggbox, 011_glue, 012_holepuncher, 013_iron, 014_lamp, 015_phone]
+  lmo:
+    cad: lmo_models.zip
+    test: lmo_test_bop19.zip
+    pbr_train: lm_train_pbr.zip
+    obj_names: [001_ape, 005_can, 006_cat, 008_driller, 009_duck, 010_eggbox, 011_glue, 012_holepuncher]
+  tless:
+    cad: tless_models.zip
+    test: tless_test_primesense_bop19.zip
+    pbr_train: tless_train_pbr.zip
+    obj_names: [001_obj, 002_obj, 003_obj, 004_obj, 005_obj, 006_obj, 007_obj, 008_obj, 009_obj, 010_obj, 011_obj, 012_obj, 013_obj, 014_obj, 015_obj, 016_obj, 017_obj, 018_obj, 019_obj, 020_obj, 021_obj, 022_obj, 023_obj, 024_obj, 025_obj, 026_obj, 027_obj, 028_obj, 029_obj, 030_obj]
+  itodd:
+    cad: itodd_models.zip
+    test: itodd_test_bop19.zip
+    pbr_train: itodd_train_pbr.zip
+    obj_names: [001_obj, 002_obj, 003_obj, 004_obj, 005_obj, 006_obj, 007_obj, 008_obj, 009_obj, 010_obj, 011_obj, 012_obj, 013_obj, 014_obj, 015_obj, 016_obj, 017_obj, 018_obj, 019_obj, 020_obj, 021_obj, 022_obj, 023_obj, 024_obj, 025_obj, 026_obj, 027_obj, 028_obj]
+  hb:
+    cad: hb_models.zip
+    test: hb_test_primesense_bop19.zip
+    pbr_train: hb_train_pbr.zip
+    obj_names: [001_red_teddy, 002_bench_wise, 003_car, 004_white_cow, 005_white_pig, 006_white_cup, 007_driller, 008_green_rabbit, 009_holepuncher, 010_brown_unknown, 011_brown_unknown, 012_black_unknown, 013_black_unknown, 014_white_painter, 015_small_unkown, 016_small_unkown, 017_small_unkown, 018_cake_box, 019_minion, 020_colored_dog, 021_phone, 022_animal, 023_yellow_dog, 024_cassette_player, 025_red_racing_car, 026_motobike,  027_heels, 028_dinosaur, 029_tea_box, 030_animal, 031_japanese_toy, 032_white_racing_car, 033_yellow_rabbit]
+  hope:
+    cad: hope_models.zip
+    test: hope_test_bop19.zip
+    obj_names: [001_alphabet_soup, 002_bbq_sauce, 003_butter, 004_cherries, 005_chocolate_pudding, 006_cookies, 007_corn, 008_cream_cheese, 009_granola_bar, 010_green_bean, 011_tomato_sauce, 012_macaroni_cheese, 013_mayo, 014_milk, 015_mushroom, 016_mustard, 017_orange_juice, 018_parmesa_cheese, 019_peaches, 020_peaches_and_carrot, 021_pineapple, 022_popcorn, 023_raisins, 024_ranch_dressing, 025_spaghetti, 026_tomato_sauce,  027_tuna, 028_yogurt]
+  ycbv:
+    cad: ycbv_models.zip
+    test: ycbv_test_bop19.zip
+    pbr_train: ycbv_train_pbr.zip
+    obj_names: [002_master_chef_can, 003_cracker_box, 004_sugar_box, 005_tomato_soup_can, 006_mustard_bottle, 007_tuna_fish_can, 008_pudding_box, 009_gelatin_box, 010_potted_meat_can, 011_banana, 019_pitcher_base, 021_bleach_cleanser, 024_bowl, 025_mug, 035_power_drill, 036_wood_block, 037_scissors, 040_large_marker, 051_large_clamp, 052_extra_large_clamp, 061_foam_brick]
+  ruapc:
+    cad: ruapc_models.zip
+    test: ruapc_test_bop19.zip
+    obj_names: [001_red_copper_box, 002_red_cheezit_box, 003_crayon_box, 004_white_glue, 005_expo_box, 006_greenies, 007_straw_cup, 008_stick_box, 009_highland_sticker, 010_red_tennis_ball, 011_yellow_duck, 012_blue_oreo, 013_pen_box, 014_yellow_standley]
+  icbin:
+    cad: icbin_models.zip
+    test: icbin_test_bop19.zip
+    pbr_train: icbin_train_pbr.zip
+    obj_names: [001_blue_cup, 002_blue_box]
+  icmi:
+    cad: icmi_models.zip
+    test: icmi_test_bop19.zip
+    obj_names: [001_obj, 002_obj, 003_obj, 004_obj, 005_obj, 006_obj]
+  tudl:
+    cad: tudl_models.zip
+    test: tudl_test_bop19.zip
+    pbr_train: tudl_train_pbr.zip
+    obj_names: [001_dinosaur, 002_white_ape, 003_white_can]
+  tyol:
+    cad: tyol_models.zip
+    test: tyol_test_bop19.zip
+    obj_names: [001_obj, 002_obj, 003_obj, 004_obj, 005_obj, 006_obj, 007_obj, 008_obj, 009_obj, 010_obj, 011_obj, 012_obj, 013_obj, 014_obj, 015_obj, 016_obj, 017_obj, 018_obj, 019_obj, 020_obj, 021_obj]
+  poseverse:
+    cad: poseverse_models.zip
+    test: poseverse_test_bop19.zip
+    obj_names: [obj_019003, obj_019004, obj_019005, obj_019006, obj_019007, obj_019008, obj_019009, obj_019010, obj_019011, obj_019012, obj_019013, obj_019014, obj_019015, obj_019016, obj_019017, obj_019018, obj_019019, obj_019020, obj_019021, obj_019022, obj_019023, obj_019024, obj_019025, obj_019026, obj_019027, obj_019028, obj_019029, obj_019030, obj_019031, obj_019032, obj_019033, obj_019034, obj_019035, obj_019036, obj_019037, obj_019038, obj_019039, obj_019040, obj_019041, obj_019042, obj_019043, obj_019044, obj_019045, obj_019046, obj_019047, obj_019048, obj_019049, obj_019050, obj_019051, obj_019052, obj_019053, obj_019054, obj_019055, obj_019056, obj_019057, obj_019058, obj_019059, obj_019060, obj_019061, obj_019062, obj_019063, obj_019064, obj_019065, obj_019066, obj_019067, obj_019068, obj_019069, obj_019070, obj_019071, obj_019072, obj_019073, obj_019074, obj_019075, obj_019076, obj_019077, obj_019078, obj_019079, obj_019080, obj_019081, obj_019082, obj_019083, obj_019084, obj_019085, obj_019086, obj_019087, obj_019088, obj_019089, obj_019090, obj_019091, obj_019092, obj_019093, obj_019094, obj_019095, obj_019096, obj_019097, obj_019098, obj_019099, obj_019100, obj_019101, obj_019102, obj_019103, obj_019104, obj_019105, obj_019106, obj_019107, obj_019108, obj_019109, obj_019110, obj_019111, obj_019112, obj_019113, obj_019114, obj_019115, obj_019116, obj_019117, obj_019118, obj_019119, obj_019120, obj_019121, obj_019122, obj_019123, obj_019124, obj_019125, obj_019126, obj_019127, obj_019128, obj_019129, obj_019130, obj_019131, obj_019132, obj_019133, obj_019134, obj_019135, obj_019136, obj_019137, obj_019138, obj_019139, obj_019140, obj_019141, obj_019142, obj_019143, obj_019144, obj_019145, obj_019146, obj_019147, obj_019148, obj_019149, obj_019150, obj_019151, obj_019152, obj_019153, obj_019154, obj_019155, obj_019156, obj_019157, obj_019158, obj_019159, obj_019160, obj_019161, obj_019162, obj_019163, obj_019164, obj_019165, obj_019166, obj_019167, obj_019168, obj_019169, obj_019170, obj_019171, obj_019172, obj_019173, obj_019174, obj_019175, obj_019176, obj_019177, obj_019178, obj_019179, obj_019180, obj_019181, obj_019182, obj_019183, obj_019184, obj_019185, obj_019186, obj_019187, obj_019188, obj_019189, obj_019190, obj_019191, obj_019192, obj_019193, obj_019194, obj_019195, obj_019196, obj_019197, obj_019198, obj_019199, obj_019200, obj_019201, obj_019202, obj_019203, obj_019204, obj_019205, obj_019206, obj_019207, obj_019208, obj_019209, obj_019210, obj_019211, obj_019212, obj_019213, obj_019214, obj_019215, obj_019216, obj_019217, obj_019218, obj_019219, obj_019220, obj_019221, obj_019222, obj_019223, obj_019224, obj_019225, obj_019226, obj_019227, obj_019228, obj_019229, obj_019230, obj_019231, obj_019232, obj_019233, obj_019234, obj_019235, obj_019236, obj_019237, obj_019238, obj_019239, obj_019240, obj_019241, obj_019242, obj_019243, obj_019244, obj_019245, obj_019246, obj_019247, obj_019248, obj_019249, obj_019250, obj_019251, obj_019252, obj_019253, obj_019254, obj_019255, obj_019256, obj_019257, obj_019258, obj_019259, obj_019260, obj_019261, obj_019262, obj_019263, obj_019264, obj_019265, obj_019266, obj_019267, obj_019268, obj_019269, obj_019270, obj_019271, obj_019272, obj_019273, obj_019274, obj_019275, obj_019276, obj_019277, obj_019278, obj_019279, obj_019280, obj_019281, obj_019282, obj_019283, obj_019284, obj_019285, obj_019286, obj_019287, obj_019288, obj_019289, obj_019290, obj_019291, obj_019292, obj_019293, obj_019294, obj_019295, obj_019296, obj_019297, obj_019298, obj_019299, obj_019300, obj_019301, obj_019302, obj_019303, obj_019304, obj_019305, obj_019306, obj_019307, obj_019308, obj_019309, obj_019310, obj_019311, obj_019312, obj_019313, obj_019314, obj_019315, obj_019316, obj_019317, obj_019318, obj_019319, obj_019320, obj_019321, obj_019322, obj_019323, obj_019324, obj_019325, obj_019326, obj_019327, obj_019328, obj_019329, obj_019330, obj_019331, obj_019332, obj_019333, obj_019334, obj_019335, obj_019336, obj_019337, obj_019338, obj_019339, obj_019340, obj_019341, obj_019342, obj_019343, obj_019344, obj_019345, obj_019346, obj_019347, obj_019348, obj_019349, obj_019350, obj_019351, obj_019352, obj_019353, obj_019354, obj_019355, obj_019356, obj_019357, obj_019358, obj_019359, obj_019360, obj_019361, obj_019362, obj_019363, obj_019364, obj_019365, obj_019366, obj_019367, obj_019368, obj_019369, obj_019370, obj_019371, obj_019372, obj_019373, obj_019374, obj_019375, obj_019376, obj_019377, obj_019378, obj_019379, obj_019380, obj_019381, obj_019382, obj_019383, obj_019384, obj_019385, obj_019386, obj_019387, obj_019388, obj_019389, obj_019390, obj_019391, obj_019392, obj_019393, obj_019394, obj_019395, obj_019396, obj_019397, obj_019398, obj_019399, obj_019400, obj_019401, obj_019402, obj_019403, obj_019404, obj_019405, obj_019406, obj_019407, obj_019408, obj_019409, obj_019410, obj_019411, obj_019412, obj_019413, obj_019414, obj_019415, obj_019416, obj_019417, obj_019418, obj_019419, obj_019420, obj_019421, obj_019422, obj_019423, obj_019424, obj_019425, obj_019426, obj_019427, obj_019428, obj_019429, obj_019430, obj_019431, obj_019432, obj_019433, obj_019434, obj_019435, obj_019436, obj_019437, obj_019438, obj_019439, obj_019440, obj_019441, obj_019442, obj_019443, obj_019444, obj_019445, obj_019446, obj_019447, obj_019448, obj_019449, obj_019450, obj_019451, obj_019452, obj_019453, obj_019454, obj_019455, obj_019456, obj_019457, obj_019458, obj_019459, obj_019460, obj_019461, obj_019462, obj_019463, obj_019464, obj_019465, obj_019466, obj_019467, obj_019468, obj_019469, obj_019470, obj_019471, obj_019472, obj_019473, obj_019474, obj_019475, obj_019476, obj_019477, obj_019478, obj_019479, obj_019480, obj_019481, obj_019482, obj_019483, obj_019484, obj_019485, obj_019486, obj_019487, obj_019488, obj_019489, obj_019490, obj_019491, obj_019492, obj_019493, obj_019494, obj_019495, obj_019496, obj_019497, obj_019498, obj_019499, obj_019500, obj_019501, obj_019502, obj_019503, obj_019504, obj_019505, obj_019506, obj_019507, obj_019508, obj_019509]
